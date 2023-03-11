@@ -119,7 +119,7 @@ function Split(props: any) {
         </Box>
         <Stack direction="column" spacing={1}>
           <Stack className='hiddenscroll' direction="column" spacing={1} sx={styles.payeeBox}>
-            {payees.reverse().map((payee) => {
+            {payees.map((payee) => {
               return <Payee key={payee.key} index={payee.key} payees={payees} setPayees={setPayees} amount={amount} splitAmounts={splitAmounts} equality={equality} />
             })}
           </Stack>
