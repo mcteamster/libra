@@ -1,0 +1,40 @@
+import { Stack, Button, Link, Typography } from '@mui/material';
+import ReplayIcon from '@mui/icons-material/Replay';
+
+function Submit(props: any) {
+  const styles = {
+    box: {
+      height: "100%",
+      width: "90%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+      paddingTop: "30px",
+    },
+  }
+
+  return (
+    <Stack className="centered" sx={styles.box} spacing={2}>
+      <Typography variant="h4">you've split it!</Typography>
+      <Typography variant="body1">(well not yet, this is just a mockup)</Typography>
+      <Typography variant="body1">the gender pay gap in Australia is currently <b>{(100*props.rate).toFixed(1)}%</b></Typography>
+      <Typography variant="body1">gone are the days where men always pay; but women needn't pay an equal share on an unequal wage</Typography>
+      <Typography variant="body1">sustainable social change takes a long time. technology can help by making the responsible decisions easy</Typography>
+      <Typography variant="body1"><i>@big_fintech</i>, if you're reading this please consider adopting this idea</Typography>
+      <Typography variant="body1">source code: <Link href="https://github.com/mcteamster/libra" target="_blank" rel="noopener">GitHub</Link></Typography>
+      <Typography variant="body1">more on <Link href="https://blog.tonz.io/3.html" target="_blank" rel="noopener">my blog</Link></Typography>
+      <Button
+        endIcon={<ReplayIcon />}
+        variant="contained"
+        onClick={() => {
+          props.setScreen(0);
+        }}>
+        <Typography fontWeight="bold">Restart</Typography>
+      </Button>
+
+    </Stack>
+  )
+}
+
+export default Submit
