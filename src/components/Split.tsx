@@ -9,7 +9,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import names from "../data/names.json";
 
 function Split(props: any) {
-  const isDesktop = useMediaQuery('(min-aspect-ratio: 1/2)');
+  const isDesktop = useMediaQuery('(min-height: 540px) and (min-aspect-ratio: 2/3)');
   const [equality, setEquality] = useState(true); // Equality mode
   const [amount, setAmount] = useState(10000); // Amount to split in cents
   const [payees, setPayees] = useState([

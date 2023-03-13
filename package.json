@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "rm -rf ../website/libra/; cp -r dist/ ../website/libra"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
