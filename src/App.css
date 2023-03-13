@@ -35,17 +35,25 @@
   scrollbar-width: none;  /* Firefox */
 } 
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-aspect-ratio: 1/2) {
+  #root {
+    padding: 0;
+    margin: 0; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  #title {
+    width: 94vw;
+    font-size: 2em;
+  }
+
+  .App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }

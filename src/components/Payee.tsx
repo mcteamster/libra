@@ -90,7 +90,7 @@ function Payee(props: any) {
               props.setPayees([...props.payees]);
             }}
           ></TextField>
-          <Typography fontSize={16} fontWeight="bold">{`${String(props.payees[props.index].amount).slice(0, -2) || "0"}.${String(props.payees[props.index].amount).slice(-2, -1) || "0"}${String(props.payees[props.index].amount).slice(-1) || "0"}`}</Typography>
+          <Typography textAlign={"right"} minWidth={"3.5em"} fontSize={16} fontWeight="bold">{`${String(props.payees[props.index].amount).slice(0, -2) || "0"}.${String(props.payees[props.index].amount).slice(-2, -1) || "0"}${String(props.payees[props.index].amount).slice(-1) || "0"}`}</Typography>
         </Stack>
       </Paper>
     </Box>

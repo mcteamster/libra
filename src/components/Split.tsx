@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useMediaQuery from "../hooks/useMediaQuery";
 import { Box, Button, Paper, Stack, Typography, TextField, InputAdornment } from '@mui/material';
 import Payee from './Payee';
 import BalanceIcon from '@mui/icons-material/Balance';
@@ -8,6 +9,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import names from "../data/names.json";
 
 function Split(props: any) {
+  const isDesktop = useMediaQuery('(min-aspect-ratio: 1/2)');
   const [equality, setEquality] = useState(true); // Equality mode
   const [amount, setAmount] = useState(10000); // Amount to split in cents
   const [payees, setPayees] = useState([
@@ -61,10 +63,10 @@ function Split(props: any) {
       fontSize: "50px",
       width: "260px",
     },
-    payeeBox: {
-      maxHeight: "325px",
+    payeeBox: (isDesktop: boolean) => ({
+      maxHeight: isDesktop? "325px": "250px",
       overflowY: "scroll",
-    },
+    }),
     buttons: {
       marginBottom: "30px",
       height: "40px",
@@ -118,7 +120,7 @@ function Split(props: any) {
           <Typography variant="h4" sx={styles.prompt}>between {payees.length}</Typography>
         </Box>
         <Stack direction="column" spacing={1}>
-          <Stack className='hiddenscroll' direction="column" spacing={1} sx={styles.payeeBox}>
+          <Stack className='hiddenscroll' direction="column" spacing={1} sx={styles.payeeBox(isDesktop)}>
             {payees.map((payee) => {
               return <Payee key={payee.key} index={payee.key} payees={payees} setPayees={setPayees} amount={amount} splitAmounts={splitAmounts} equality={equality} />
             })}
@@ -137,9 +139,11 @@ function Split(props: any) {
               color="error"
               sx={styles.personButton}
               onClick={() => {
-                payees.pop()
-                splitAmounts(amount, equality)
-                setPayees([...payees]);
+                if(payees.length > 1) {
+                  payees.pop()
+                  splitAmounts(amount, equality)
+                  setPayees([...payees]);
+                }
               }}
             ><PersonRemoveIcon /></Button>
           </Stack>
