@@ -9,7 +9,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import names from "../data/names.json";
 
 function Split(props: any) {
-  const isDesktop = useMediaQuery('(min-height: 540px) and (min-aspect-ratio: 2/3)');
+  const isDesktop = useMediaQuery('(min-aspect-ratio: 1/1)');
   const [equality, setEquality] = useState(true); // Equality mode
   const [amount, setAmount] = useState(10000); // Amount to split in cents
   const [payees, setPayees] = useState([
@@ -64,7 +64,7 @@ function Split(props: any) {
       width: "260px",
     },
     payeeBox: (isDesktop: boolean) => ({
-      maxHeight: isDesktop? "325px": "250px",
+      maxHeight: isDesktop? "325px": "190px",
       overflowY: "scroll",
     }),
     buttons: {

@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 function Phone() {
   const [screen, setScreen] = useState(0);
   const [rate, setRate] = useState(0.133);
-  const isDesktop = useMediaQuery('(min-height: 540px) and (min-aspect-ratio: 2/3)');
+  const isDesktop = useMediaQuery('(min-aspect-ratio: 1/1)');
 
   const screens: any = {
     0: <Split rate={rate} setScreen={setScreen}></Split>,
@@ -18,7 +18,7 @@ function Phone() {
     casing: (isDesktop: boolean) => ({
       width: isDesktop ? "350px" : "94%",
       maxWidth: "400px",
-      height: isDesktop ? "723px" : "603px",
+      height: isDesktop ? "723px" : "583px",
       borderRadius: isDesktop ? "50px" : "50px",
       marginBottom: "1em",
       backgroundColor: "black",
@@ -26,10 +26,10 @@ function Phone() {
       justifyContent: "center"
     }),
     screen: (isDesktop: boolean) => ({
-      width: isDesktop ? "320px" : "100%",
-      height: isDesktop ? "693px" : "100%",
+      width: isDesktop ? "320px" : "calc(100% - 24px)",
+      height: isDesktop ? "693px" : "calc(100% - 40px)",
       paddingBottom: isDesktop ? "0" : "1em",
-      borderRadius: isDesktop ? "38px" : "38px",
+      borderRadius: isDesktop ? "38px" : "40px",
       backgroundColor: "antiquewhite",
       color: "black"
     })
