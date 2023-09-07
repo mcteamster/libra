@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 
 function Phone() {
   const [screen, setScreen] = useState(0);
-  const [rate, setRate] = useState(0.133);
+  const [rate, setRate] = useState(0.130);
   const isDesktop = useMediaQuery('(min-aspect-ratio: 1/1)');
 
   const screens: any = {
