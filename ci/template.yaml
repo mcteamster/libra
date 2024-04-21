@@ -3,7 +3,7 @@ Description: 'ACFS3 - S3 Static site with CF and ACM
 
   https://github.com/aws-samples/amazon-cloudfront-secure-static-site
 
-  (uksb-1qnk6ni7b) (version:v0.5)
+  (uksb-1qnk6ni7b) (version:v0.12)
 
   '
 Metadata:
@@ -17,7 +17,7 @@ Metadata:
 Mappings:
   Solution:
     Constants:
-      Version: v0.11
+      Version: v0.12
 Rules:
   OnlyUsEast1:
     Assertions:
@@ -54,14 +54,14 @@ Resources:
   CustomResourceStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/solution-builders-us-east-1/amazon-cloudfront-secure-static-site/v0.11/2b48ad4cf4932286a8fe4e9422808e0c.template
+      TemplateURL: https://s3.amazonaws.com/solution-builders-us-east-1/amazon-cloudfront-secure-static-site/v0.12/77e81fb1e0c62b5a56b6176187a3c59d.template
       Tags:
       - Key: Solution
         Value: ACFS3
   AcmCertificateStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/solution-builders-us-east-1/amazon-cloudfront-secure-static-site/v0.11/36356fd9dd7f6ab4db15b23ac7be9dc2.template
+      TemplateURL: https://s3.amazonaws.com/solution-builders-us-east-1/amazon-cloudfront-secure-static-site/v0.12/36356fd9dd7f6ab4db15b23ac7be9dc2.template
       Parameters:
         SubDomain:
           Ref: SubDomain
@@ -77,7 +77,7 @@ Resources:
   CloudFrontStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/solution-builders-us-east-1/amazon-cloudfront-secure-static-site/v0.11/c12fa047700b6237e6a8e74b6ec6050b.template
+      TemplateURL: https://s3.amazonaws.com/solution-builders-us-east-1/amazon-cloudfront-secure-static-site/v0.12/c12fa047700b6237e6a8e74b6ec6050b.template
       Parameters:
         CertificateArn:
           Fn::GetAtt:
