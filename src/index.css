@@ -67,3 +67,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@media (max-aspect-ratio: 2/3) {
+  :root {
+    background-color: antiquewhite;
+  }
+}

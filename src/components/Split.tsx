@@ -9,7 +9,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import names from "../data/names.json";
 
 function Split(props: any) {
-  const isDesktop = useMediaQuery('(min-aspect-ratio: 1/1)');
+  const isDesktop = useMediaQuery('(min-aspect-ratio: 2/3)');
   const [equality, setEquality] = useState(true); // Equality mode
   const [amount, setAmount] = useState(10000); // Amount to split in cents
   const [payees, setPayees] = useState([
@@ -56,15 +56,19 @@ function Split(props: any) {
       paddingTop: "30px",
     },
     prompt: {
-      textAlign: "left",
+      textAlign: "center",
       lineHeight: "66px",
     },
     entry: {
       fontSize: "50px",
       width: "260px",
+      backgroundColor: "#fdfdfd",
+      input: {
+        textAlign: "right",
+      },
     },
     payeeBox: (isDesktop: boolean) => ({
-      maxHeight: isDesktop? "325px": "190px",
+      maxHeight: isDesktop? "325px": "100%",
       overflowY: "scroll",
     }),
     buttons: {
@@ -79,6 +83,7 @@ function Split(props: any) {
     personButton: {
       minWidth: "32px",
       minHeight: "32px",
+      paddingBottom: "1em",
     },
     splitButton: {
       height: "32px",
@@ -100,12 +105,11 @@ function Split(props: any) {
             let's split
           </Typography>
           <TextField
-            sx={styles.entry}
             value={`${String(amount).slice(0, -2) || "0"}.${String(amount).slice(-2, -1) || "0"}${String(amount).slice(-1) || "0"}`}
             InputProps={{
               inputMode: 'numeric',
-              endAdornment: <InputAdornment position="end">AUD</InputAdornment>,
-              sx: styles.entry
+              startAdornment: <InputAdornment position="start">AUD</InputAdornment>,
+              sx: styles.entry,
             }}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               const amountRegex = new RegExp("^[0-9]{0,6}$")
