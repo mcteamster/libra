@@ -9,11 +9,6 @@ function Phone() {
   const [rate, _] = useState(0.115);
   const isDesktop = useMediaQuery('(min-aspect-ratio: 2/3)');
 
-  const screens: any = {
-    0: <Split rate={rate} setScreen={setScreen}></Split>,
-    1: <Submit rate={rate} setScreen={setScreen}></Submit>
-  }
-
   const styles = {
     casing: (isDesktop: boolean) => ({
       width: isDesktop ? "350px" : "100%",
@@ -24,7 +19,8 @@ function Phone() {
       display: "flex",
       justifyContent: "center"
     }),
-    screen: (isDesktop: boolean) => ({
+    screen: (isDesktop: boolean, hidden: boolean) => ({
+      display: hidden ? "none" : "flex",
       width: isDesktop ? "320px" : "100%",
       height: isDesktop ? "693px" : "100%",
       paddingBottom: isDesktop ? "0" : "1em",
@@ -42,8 +38,11 @@ function Phone() {
 
   return (
     <Box className="casing centered" sx={styles.casing(isDesktop)}>
-      <Box className="screen centered" sx={styles.screen(isDesktop)}>
-        {screens[screen]}
+      <Box className="screen centered" sx={styles.screen(isDesktop, screen != 0)}>
+        <Split rate={rate} setScreen={setScreen}></Split>
+      </Box>
+      <Box className="screen centered" sx={styles.screen(isDesktop, screen != 1)}>
+        <Submit rate={rate} setScreen={setScreen}></Submit>
       </Box>
     </Box>
   )

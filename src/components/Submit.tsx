@@ -34,7 +34,7 @@ function Submit(props: any) {
         onClick={() => {
           props.setScreen(0);
         }}>
-        <Typography fontWeight="bold">Restart</Typography>
+        <Typography fontWeight="bold">Return</Typography>
       </Button>
 
     </Stack>
