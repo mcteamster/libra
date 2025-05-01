@@ -26,7 +26,7 @@ function Submit(props: any) {
       <Typography variant="body1">
         <Link href="https://github.com/mcteamster/libra" target="_blank" rel="noopener" fontWeight={"bold"}>GitHub</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <Link href="https://blog.tonz.io/3.html" target="_blank" rel="noopener" fontWeight={"bold"}>Dev Blog</Link>
+        <Link href="https://tonz.io/blog/3.html" target="_blank" rel="noopener" fontWeight={"bold"}>Dev Blog</Link>
       </Typography>
       <Button
         endIcon={<ReplayIcon />}
