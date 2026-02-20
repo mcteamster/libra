@@ -1,0 +1,18 @@
+{
+  "name": "libra",
+  "description": "Agent for the libra repository with ABS paygap skill",
+  "prompt": null,
+  "mcpServers": {},
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "allowedTools": [],
+  "resources": [
+    "skill://.kiro/skills/abs-paygap.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {},
+  "includeMcpJson": true,
+  "model": null
+}
