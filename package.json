@@ -26,12 +26,12 @@
   "description": "equitable pay gap bill splitter",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mcteamster/libra.git"
+    "url": "git+https://github.com/tonzdev/libra.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mcteamster/libra/issues"
+    "url": "https://github.com/tonzdev/libra/issues"
   },
-  "homepage": "https://github.com/mcteamster/libra#readme"
+  "homepage": "https://github.com/tonzdev/libra#readme"
 }
